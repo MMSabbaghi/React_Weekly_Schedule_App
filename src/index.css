@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  outline: none;
+}
+
+/* Weekly Schedule */
+
+table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  margin: 30px auto;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  width: calc(100% / 14);
+  white-space: pre-wrap;
+}
+
+thead tr {
+  background-color: #009879;
+  color: #ffffff;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+table,
+th,
+tr,
+td {
+  text-align: center;
+}
+
+td.active_cell {
+  border: 2px solid rgb(145, 144, 144);
+  border-bottom: 0;
+  border-top: 0;
+}
+
+td.row_title {
+  border-right: 2px solid rgb(145, 144, 144);
+  position: relative;
+}
+
+.add_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #009879;
+  color: #fff;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: large;
+
+  position: absolute;
+  right: -11px;
+  top: 25%;
+}
+
+/*Form*/
+
+.schedule_form_header {
+  margin-bottom: 15px;
+}
+
+.schedule_form_header hr {
+  border: 2px solid #009879;
+}
+
+.schedule_form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.schedule_form input {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 0;
+  border: #888 solid 1px;
+  transition: all 0.2s ease;
+}
+
+.schedule_form input:focus {
+  border-color: #009879;
+}
+
+.schedule_form button {
+  background-color: #009879;
+  color: #fff;
+  padding: 8px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 0;
+}
+
+.schedule_form button:disabled {
+  opacity: 0.5;
+}
+
+.schedule_form label {
+  margin-bottom: 2px;
+}
