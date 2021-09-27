@@ -61,10 +61,14 @@ td {
   text-align: center;
 }
 
-td.active_cell {
-  border: 2px solid rgb(145, 144, 144);
-  border-bottom: 0;
-  border-top: 0;
+td.active_cell span {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  background-color: #009879;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 16px;
 }
 
 td.row_title {

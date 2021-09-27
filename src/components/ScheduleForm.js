@@ -14,8 +14,13 @@ const ScheduleForm = ({ match, history }) => {
 
   const validateSchedule = () => {
     if (schedule.title.length < 3) return false;
-    const allSchedules = getAllSchedules();
-    if (allSchedules.some((s) => s.start + s.duration > schedule.start))
+    if (!schedule.duration) return false;
+    const daySchedules = getAllSchedules().filter((s) => s.day === +day);
+    if (
+      daySchedules.some(
+        (s) => s.start + s.duration > schedule.start && s.start < schedule.start
+      )
+    )
       return false;
     return true;
   };

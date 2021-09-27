@@ -8,7 +8,7 @@ const SchedulesTableRow = ({ onAdd, day, daySchedules }) => {
         const schedule = daySchedules.find((s) => s.start === hour);
         tds.push(
           <td className="active_cell" colSpan={schedule.duration} key={hour}>
-            {schedule.title}
+            <span>{schedule.title}</span>
           </td>
         );
       } else if (
