@@ -3,7 +3,7 @@ import ScheduleForm from "./ScheduleForm";
 import SchedulesTableRow from "./SchedulesTableRow";
 import { daysOfWeek, hoursOfday } from "../utils/times";
 import { useEffect, useState } from "react";
-import { getAllSchedules } from "../Services/schedule_service";
+import { getAllSchedules, deleteSchedule } from "../Services/schedule_service";
 import { useLocation } from "react-router-dom";
 
 const WeeklySchedule = ({ history }) => {
@@ -12,6 +12,11 @@ const WeeklySchedule = ({ history }) => {
   useEffect(() => {
     if (location.pathname === "/") setSchedules(getAllSchedules());
   }, [location]);
+
+  const deleteScheduleHandler = (id) => {
+    deleteSchedule(id);
+    setSchedules(getAllSchedules());
+  };
 
   return (
     <div>
@@ -32,6 +37,7 @@ const WeeklySchedule = ({ history }) => {
               daySchedules={schedules.filter((s) => s.day === index + 1)}
               day={day}
               onAdd={() => history.push(`schedule-form/${index + 1}`)}
+              onDelete={deleteScheduleHandler}
             />
           ))}
         </tbody>

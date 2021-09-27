@@ -1,6 +1,6 @@
 import { hoursOfday } from "../utils/times";
 
-const SchedulesTableRow = ({ onAdd, day, daySchedules }) => {
+const SchedulesTableRow = ({ onAdd, onDelete, day, daySchedules }) => {
   const createCells = () => {
     const tds = [];
     hoursOfday.forEach((hour) => {
@@ -9,6 +9,12 @@ const SchedulesTableRow = ({ onAdd, day, daySchedules }) => {
         tds.push(
           <td className="active_cell" colSpan={schedule.duration} key={hour}>
             <span>{schedule.title}</span>
+            <button
+              onClick={() => onDelete(schedule.id)}
+              className="delete_btn"
+            >
+              ×
+            </button>
           </td>
         );
       } else if (

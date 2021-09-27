@@ -17,3 +17,9 @@ export function addNewSchedule(schedule) {
   saveSchedules(allSchedules);
   console.log(getAllSchedules());
 }
+
+export function deleteSchedule(id) {
+  let allSchedules = getAllSchedules();
+  allSchedules = allSchedules.filter((s) => s.id !== id);
+  saveSchedules(allSchedules);
+}
